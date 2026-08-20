@@ -1,50 +1,43 @@
-# Welcome to your Expo app 👋
+# Contador con toggle de tema 🌓
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+App móvil desarrollada con [Expo](https://expo.dev) que implementa un contador interactivo con tema claro/oscuro.
 
-## Get started
+## Funcionalidades
 
-1. Install dependencies
+- **Contador**: incrementa de a uno con el botón `+1`.
+- **Reset**: vuelve el contador a 0.
+- **Toggle de tema**: alterna entre modo claro y oscuro con un switch animado.
+- **Límite máximo**: el botón `+1` se bloquea al llegar a 10, con un indicador de estado tipo terminal.
+- **Estilo visual**: estética minimalista inspirada en herramientas de desarrollador (tipografía monoespaciada, bordes finos, sin sombras), con un acento de color mínimo para indicar estado activo.
+
+## Stack técnico
+
+- [Expo](https://expo.dev) (SDK 54)
+- React Native
+- TypeScript
+- [Expo Router](https://docs.expo.dev/router/introduction) (file-based routing)
+
+## Cómo correrlo
+
+1. Instalar dependencias
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Iniciar la app
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Elegí cómo abrirla desde la salida de la consola:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
+   - [Emulador de Android](https://docs.expo.dev/workflow/android-studio-emulator/)
+   - [Simulador de iOS](https://docs.expo.dev/workflow/ios-simulator/)
+   - [Expo Go](https://expo.dev/go), sandbox liviano para probar sin generar un build
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Estructura del proyecto
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+El desarrollo principal está en `app/index.tsx`, usando [file-based routing](https://docs.expo.dev/router/introduction) de Expo Router. Los tokens de tema (`lightTheme`, `darkTheme`) y el hook `useThemeStyles` están separados de la lógica del componente para mantener la UI desacoplada del estado.
